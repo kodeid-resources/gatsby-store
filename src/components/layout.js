@@ -7,7 +7,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
+import { Link, StaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
 import './layout.css';
@@ -34,6 +34,48 @@ const Layout = ({ children }) => (
             paddingTop: 0
           }}
         >
+          <nav>
+            <ul style={{ listStyle: 'none', marginLeft: 0 }}>
+              <li
+                style={{
+                  display: 'inline',
+                  marginRight: 6,
+                  marginLeft: 0
+                }}
+              >
+                <Link
+                  style={{
+                    borderColor: 'purple',
+                    borderWidth: 1,
+                    borderStyle: 'solid',
+                    padding: 6,
+                    textDecoration: 'none'
+                  }}
+                  to="/"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li
+                style={{
+                  display: 'inline'
+                }}
+              >
+                <Link
+                  style={{
+                    borderColor: 'purple',
+                    borderWidth: 1,
+                    borderStyle: 'solid',
+                    padding: 6,
+                    textDecoration: 'none'
+                  }}
+                  to="/shop"
+                >
+                  Shop
+                </Link>
+              </li>
+            </ul>
+          </nav>
           <main>{children}</main>
           <footer style={{ marginTop: 64, color: '#cacaca' }}>
             © {new Date().getFullYear()}, Built with
