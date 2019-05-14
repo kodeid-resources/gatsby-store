@@ -5,6 +5,7 @@ module.exports = {
     author: `@gatsbyjs`
   },
   plugins: [
+    `gatsby-plugin-stripe`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
