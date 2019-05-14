@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: `KODE Website`,
@@ -5,6 +7,14 @@ module.exports = {
     author: `@gatsbyjs`
   },
   plugins: [
+    {
+      resolve: `gatsby-source-stripe`,
+      options: {
+        objects: [`Product`, `Sku`],
+        secretKey: process.env.STRIPE_SECRET_KEY,
+        downloadFile: false
+      }
+    },
     `gatsby-plugin-stripe`,
     {
       resolve: `gatsby-source-filesystem`,
